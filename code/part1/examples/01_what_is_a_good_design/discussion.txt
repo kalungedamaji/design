@@ -1,0 +1,42 @@
+What is a good design?
+
+Simple
+modular
+readable
+scalable
+elastic
+human friendly
+meets requirements
+extensible
+modifiable
+maintainable
+undertable
+testable
+fails fast
+robus in performance
+fault tolerant
+reusable
+
+
+https://twitter.com/venkat_s/status/561046784186015744
+
+Characteristics of Good Design:
+-Simple
+-Fewer moving parts
+-Relevant
+-high cohesion and loose and low coupling
+
+Cohesion:
+Code that does one thing and only one thing really well
+Narrow and focused
+That changes less frequently
+The cost of change is minimized
+
+Coupling:
+Low instead of high coupling
+Loose instead of tight coupling
+
+Fewer dependencies and also more flexible dependencies
+
+Both low and loose coupling
+
