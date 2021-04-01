@@ -1,0 +1,140 @@
+Inheritance is the weakest link of OOP
+
+Inheritance is predominantly a feature needed in statically typed language
+
+Inheritance leads to tight coupling between the derived class and
+the base class. Rigid and can get stagnant.
+
+What is delegation?
+It is where one class depends on another class for doing part of its
+work or service. Delegation may appears in the form of association,
+aggregation or composition.
+
+class A extends B {
+  C objc = ...
+}
+
+A inherits from B and delegates to C.
+
+Should we use inheritance or delegation?
+
+If an object of A wants to use an object of B, then use delegation.
+If an object of A should be used in the place of an object of B, then
+use inheritance.
+
+Use delegation for reuse and use inheritance only for substitutability.
+
+class Person extends LivingCreature {
+  private Car car;
+}
+
+Delegation is more common than composition. Composition in object
+modeling often ties the lifetime of the two objects together.
+
+To use vs. to be used where expected...
+
+What not use inheritance all the time?
+
+We have to abide by a contract when it comes to using inheritance
+and takes a lot more effort and committment that we should take to be
+a user of an abstraction.
+
+Barbara Liskov's Substitution principle (LSP)
+
+A user of a base class should *not* know the difference between 
+using an instance of a base class or an instance of a derived class.
+
+void user(Base b) {
+  should be able to use Base or an instance of any derived class of B
+  without ever knowing the difference.
+}
+
+The derived class services should require no more and promise no less
+than the corresponding services of the base class.
+
+If a user has to know the difference between base or derived, then
+the user will have to violate the OCP. LSP protects the user of
+our code from violating OCP.
+
+1. It is more diffcult to inherit from a class than to simply use it.
+2. The users of a base class will be affected if we inherit incorrectly
+from a base class. The user of our class will violate the OCP if we
+violate the LSP.
+
+If we violate LSP, we may cause others to violate OCP to work around
+the mess we create.
+
+Good examples of LSP:
+
+1. In Java, a derived class method should not be protected or private
+  if the corresponding base method is public.
+   If a base method is protected, then the derived method can't be
+   private.
+
+2. In Java, if a base method declares throws E1, then the corresponding 
+derived method can't throw any other exceptions like E2 (unless E2
+extends E1 - but that may also be a violation of LSP if we are not careful)
+
+user(Base base) {
+  try {
+    base.f1();
+  }catch(E1 ex) {
+    ...handle...
+  }
+}
+
+If we pass new Derived() to user, and if f1 in Derived were to throw
+an arbitrary exception, then how does the user handle that?
+
+user(Base base) {
+  try {
+    base.f1();
+  }catch(Exception ex) {
+    if(ex instanceof E1) ...
+    if(ex instanceof E2) ...
+    ...handle...
+  }
+}
+
+or
+
+user(Base base) {
+  try {
+    if(base instanceof Derived) {
+      try {
+        ...
+      } catch(E2 ex) {
+        ...
+      }
+    }
+  } catch(E1 ex) {
+    ...handle...
+  }
+}
+
+no matter how we address this, it ends up being a mess and a violatio of OCP.
+
+To protect from such situation, Java already disallows
+throwing new checked exceptions from the overriding methods.
+
+Bad violation of LSP:
+
+Known violations of LSP (Sadly)
+
+class Stack extends Vector (oh no)
+
+If we pass a stack to a function that expects a vector, then we are
+in trouble. This violates the invariance of a stack. The function may
+use the stack in a way it is treating a vector and not in a way 
+it would treat a stack.
+
+This is an example of where they should have used delegation and not
+inheritance.
+
+In languages like Java there is special syntax for inheritance (implements
+and extends). There is no special syntax for delegation.
+
+Groovy has a speical syntax for delegation - @Deletage
+Kotlin has a special syntax for delegation - by
+What about Java? Project Lombok has features for this
+
