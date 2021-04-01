@@ -1,0 +1,49 @@
+Single Responsibility Principle(SRP):
+
+The reasons for change for a function should be minimum
+Cohesive
+
+How can we tell if our code follows the SRP?
+
+What does the word "Responsibility" really mean?
+Some go to the extreme to say a function should not have if or
+a function should not take two or more parameters, etc...
+
+Instead of going to the extreme, let us think about easy violations
+of this principle:
+
+Long functions or long method:
+
+Do you think writing long functions is a good idea?
+Yes / _no_
+
+Have you recently seen long functions at work?
+Yes / no
+
+Cognitive dissonance
+
+Why are long function such a bad idea?
+-Hard to test
+-Hard to read and understand
+-Hard to maintain
+-Hard to debug
+-Hard to reuse
+-Leads to duplication
+-low cohesion  | diagonal opposite 
+-high coupling | of good design
+...
+
+How long is long?
+10,000 - long
+1000 - long
+100 - long? hum
+
+It is not the number of lines of code that makes a function long?
+
+A good function focuses on a single level of detail.
+Single Level of Abstraction Principle (SLAP)
+
+A long or a short function is not about the length of a function, it is
+really about the number of levels of details or abstraction that function
+focuses on.
+
