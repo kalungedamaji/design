@@ -1,0 +1,72 @@
+Open Closed Principle (OCP)
+
+A software module must be open for extension but closed for modification
+-Bertrand Meyer
+
+It is more expensive to modify existing pieces of code that to add
+a very small piece of new code.
+
+Extensibility
+
+Abstraction and polymorphism are the key
+
+What is the most non-polymorphic keyword or function in languages like
+Java, C#, C++:
+
+new is latin for tight coupling
+
+new says that I want an instance of that particular type... tight coupling
+
+new is polymorphic in languages like Ruby
+
+Abstract Factory, Factory Method, etc. are patterns created just to
+handle the tight coupling of new. Patterns exist where languages are
+deficient.
+
+Almost any function that contains instanceof may be violating OCP
+
+If you have a piece of code which does instanceof on two or three
+different classes, then it has to change if in the future we add
+another class. Violation of OCP
+
+Almost always, but not always:
+
+public boolean equals(Object other) {
+  if(other instanceof Animal) {
+    //...
+    //this method in the Animal class is not a vilation of OCP
+    //even if we have other classes, this code that uses instanceof
+    //does not have to change.
+  }
+
+  return false;
+}
+
+We want to avoid tight coupling and make code extensible for change.
+
+private is necessary but not sufficient to be model extensible code.
+
+class Inventory {
+  private ArrayList<Book> books;
+
+  publci ArrayList<Book> getBook() ...
+
+  //this is not good encapsulation
+}
+
+The implementation detail is visible outside of this class, poor design.
+
+User of the class knows the implementation and is affected if we modify
+the implementation.
+
+It is often we want to change the how of a code, but we want to do so
+without changing the what of the code.
+
+In the above design, we leaked the how instead of focusing on the what.
+
+One solution is to return List<Book> or Collection<Book>, but...
+
+public Iterator<Book> getBooks() is one good solution
+or
+public Stream<Book> getBook() is also is a good solution
+
