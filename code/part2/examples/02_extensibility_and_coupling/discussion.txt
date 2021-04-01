@@ -1,0 +1,13 @@
+Tight coupling often makes design hard to extend.
+
+As much as possible favor loose coupling and low coupling to make
+design extensible.
+
+Fewer things to depend on lowers fragility
+The more abstract a dependency is, the more extensible the design is.
+
+We should not use these blindly and need to evaluate tradeoffs and
+give due consideration.
+
+Do not blindly create interfaces for every dependency.
+
