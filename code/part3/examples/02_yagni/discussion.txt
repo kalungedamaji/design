@@ -1,0 +1,11 @@
+YAGNI(y)
+
+You aren't gonna need it, yet
+
+  $now	 $later
+       >    - postpone, do later with less expense and more knowledge      
+       ==   - postpone, do later with possibly less expense and more knowledge       
+       <       what is the probability of needing it?
+               high - do it now
+	       * - postpone and may be avoid writing it
+
