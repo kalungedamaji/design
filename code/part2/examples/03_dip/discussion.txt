@@ -1,0 +1,41 @@
+Dependency Inversion Principle
+
+Human        ------->       Clock
+implementation             implementation
+
+Tight coupling
+
+----------------------------------------------------------
+
+Human       ----------->     Alarm
+                               ^ 
+			       |
+			       |
+
+       --------------------------------------------------------
+       |           |           |           |
+      Clock     Computer    SmartPhone     TV....
+
+We want to avoid tight coupling as much as possible, but only where
+necessary
+
+DIP says that a concrete class should not depend on another concrete class.
+Instead both should depend on an interface.
+
+Interfaces provide loose coupling compared to dependencies on classes.
+
+The direction of the dependency has been inverted.  Instead of
+the Human depending on the Clock, with Clock not having any dependencies,
+in this case, both the Human and the Clock depend on the Alarm.
+
+From an in coming dependency to Clock, we went to an out going dependency
+from Clock.
+
+from
+Human ---> Clock
+
+to
+Human ---> Alarm <|----- Clock
+
+Details depend on specfication rather than on other details.
+
