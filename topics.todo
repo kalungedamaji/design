@@ -5,49 +5,48 @@ Twitter: @venkat_s
 http://www.agiledeveloper.com download link
 
 Getting started:
--the repo details are on the chat, you can quickly copy and paste it from there
 -code will be pushed live during the class, please clone the repo
   git clone http://www.agiledeveloper.com/repos/git/hsd040121
   userid: onlineclass
   password: code4love
   
 Part 1: Good design and design principles:
--What is design?
--What is a good design?
--Characteristics of good design
--Cohesion
--Coupling
--Single Responsibility Principle
- -long methods are major violators of this
--SLAP
- -refactoring to honor SLAP
--Rules for simple design
--lab
+✔What is design?
+✔What is a good design?
+✔Characteristics of good design
+✔Cohesion
+✔Coupling
+✔Single Responsibility Principle
+ ✔long methods are major violators of this
+✔SLAP
+ ✔refactoring to honor SLAP
+✔Rules for simple design
+✔lab
 
 Part 2: Designing for extensibility:
--What is extensibility?
--Tight vs. loose vs. low coupling
--Dependency Inversion Principle
--Example of DIP
--lab
+✔What is extensibility?
+✔Tight vs. loose vs. low coupling
+✔Dependency Inversion Principle
+✔Example of DIP
+✔lab code/part2/lab/readme.txt
 
 Part 3: Using fundamental design principles:
--Design Principles
--DRY
--YAGNI(y) You Aren't Gonna Need It (yet)
--Open Closed Principle
--lab
+✔Design Principles
+✔DRY
+✔YAGNI(y) You Aren't Gonna Need It (yet)
+✔Open Closed Principle
+✔lab
 
 Part 4: Object-oriented design:
--Inheritance
--Benefits
--Drawbacks
--Delegation vs. inheritance
--When to use inheritance?
--Liskov's Substitution Principle
--Good examples of LSP
--Examples of LSP violation
--lab
+✔Inheritance
+✔Benefits
+✔Drawbacks
+✔Delegation vs. inheritance
+✔When to use inheritance?
+✔Liskov's Substitution Principle
+✔Good examples of LSP
+✔Examples of LSP violation
+✔lab
 
 Discussions:
--discussions
+✔discussions
